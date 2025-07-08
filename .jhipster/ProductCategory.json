@@ -1,0 +1,19 @@
+{
+  "annotations": {
+    "changelogDate": "20250708025821"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ProductCategory",
+  "relationships": [],
+  "searchEngine": "no"
+}

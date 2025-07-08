@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="00000000000099-1" author="jhipster">
+        <createSequence sequenceName="address_seq" startValue="1" incrementBy="50"/>
+        <createSequence sequenceName="customer_seq" startValue="1" incrementBy="50"/>
+        <createSequence sequenceName="product_seq" startValue="1" incrementBy="50"/>
+        <createSequence sequenceName="product_category_seq" startValue="1" incrementBy="50"/>
+    </changeSet>
+    <changeSet id="00000000000099-2" author="jhipster" context="faker">
+        <sql dbms="postgresql">
+            SELECT setval('address_seq', COALESCE((SELECT MAX(id) FROM address), 0));
+        </sql>
+        <sql dbms="postgresql">
+            SELECT setval('customer_seq', COALESCE((SELECT MAX(id) FROM customer), 0));
+        </sql>
+        <sql dbms="postgresql">
+            SELECT setval('product_seq', COALESCE((SELECT MAX(id) FROM product), 0));
+        </sql>
+        <sql dbms="postgresql">
+            SELECT setval('product_category_seq', COALESCE((SELECT MAX(id) FROM product_category), 0));
+        </sql>
+    </changeSet>
+</databaseChangeLog>

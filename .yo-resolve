@@ -1,0 +1,28 @@
+pom.xml skip
+webpack/webpack.common.js skip
+
+# Webapp entitites
+src/main/webapp/app/entities/address/**/* skip
+src/main/webapp/app/entities/customer/**/* force
+src/main/webapp/app/entities/product/**/* force
+
+# Liquibase fake data
+# src/main/resources/config/liquibase/changelog/20250705153209_added_entity_Product.xml force
+
+src/main/resources/config/liquibase/fake-data/address.csv skip
+src/main/resources/config/liquibase/fake-data/customer.csv skip
+src/main/resources/config/liquibase/fake-data/product.csv force
+
+# Backend entities
+src/**/Address* skip
+src/**/Customer* force
+src/**/Product* force
+
+# Required changes
+src/main/resources/config/liquibase/master.xml force
+src/main/webapp/i18n/nl/global.json force
+src/main/webapp/app/entities/menu.tsx force
+src/main/webapp/app/entities/routes.tsx force
+src/main/webapp/app/entities/reducers.ts force
+src/main/webapp/i18n/nl/* force
+src/main/webapp/app/shared/model/* force

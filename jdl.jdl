@@ -1,0 +1,30 @@
+entity Address {
+  houseNumber String
+  street String
+  country String
+}
+
+entity Customer {
+  firstName String
+  lastName String
+  birthday LocalDate
+  phoneNumber String
+  email String
+}
+
+entity Product {
+  code String
+  name String
+  price Double
+}
+
+entity ProductCategory {
+  code String
+  name String
+}
+
+relationship ManyToOne {
+  Customer{address} to Address
+  Customer{product} to Product
+  Product{productCategory} to ProductCategory
+}
