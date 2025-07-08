@@ -265,3 +265,4 @@ fi
 
 echo ""
 echo "✅ Done! Now run: ./mvnw liquibase:update"
+
